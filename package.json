@@ -1,0 +1,22 @@
+{
+    "name": "password-manager",
+    "version": "1.0.0",
+    "main": "app.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon -w app.js"
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.2",
+        "chalk": "4.1.2",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "font-awesome": "^4.7.0",
+        "fs-extra": "^10.1.0",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.0"
+    }
+}
+

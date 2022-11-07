@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PassMan</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="bg-secondary">
+        <%- include("./includes/navbar.ejs") %>
+        <div class="container mt-5">
+            <div class="row text-bg-light p-4 rounded mx-3">
+                <h2><i class="fa fa-plus"></i> Password Manager</h2>
+                <p>Use bottom inputs to create and manage a new password.</p>
+                <form
+                    action="/add"
+                    method="post"
+                    enctype="application/x-www-form-urlencoded"
+                    autocomplete="off"
+                    class="needs-validation"
+                    novalidate
+                >
+                    <div class="form-floating mb-3 mt-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            placeholder="Enter username"
+                            name="username"
+                            required
+                        />
+                        <label for="username">Username</label>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">
+                            Please fill out this field
+                        </div>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            placeholder="Enter password"
+                            name="password"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$"
+                            required
+                        />
+                        <label for="password">Password</label>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">
+                            Must contain at least one number, one lowercase and one uppercase letter and one '!@#$%^&*_=+-'' symbol and 
+                            min 8 characters .
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea
+                            class="form-control mb-4 textareaClass no-validate"
+                            id="comment"
+                            name="comment"
+                            placeholder="Comment goes here"
+                        ></textarea>
+                        <label for="comment">Comments</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Add New
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/validation.js"></script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+.card:hover {
+    opacity: 0.9;
+}
+
+.fa-coffee {
+    color: brown;
+}
+
+.fa-heart {
+    color: brown;
+}
+
+.nc {
+    color: black;
+}
+
+.nc:hover {
+    color: #111 !important;
+}
+
+.textareaClass {
+    min-height: 150px !important;
+}
+
+.form-control.no-validate:valid {
+    border-color: #ced4da;
+    padding-right: 0.75rem;
+    background: none;
+}
+
+.fa-copy {
+    margin-right: 6px;
+    font-size: 20px;
+}
+
+
+.copy {
+    cursor: pointer;
+}
+
+.copy:hover {
+    color : brown !important;
+}
+
+.font-size-small {
+    font-size: 15px !important;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PassMan</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="bg-secondary">
+        <%- include("./includes/navbar.ejs") %>
+        <div class="container mt-5">
+            <div class="row text-bg-light p-4 rounded mx-3">
+                <h2><i class="fa fa-remove"></i> Password Manager</h2>
+                <p>Use bottom input to delete a password with its ID.</p>
+                <form
+                    action="/remove"
+                    method="post"
+                    enctype="application/x-www-form-urlencoded"
+                    autocomplete="off"
+                    class="needs-validation"
+                    novalidate
+                >
+                    <div class="form-floating mb-3 mt-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="passID"
+                            placeholder="Pass ID"
+                            name="passID"
+                            required
+                        />
+                        <label for="passID">PassID</label>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">
+                            Please enter a passID
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Remove
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/validation.js"></script>
+    </body>
+</html>

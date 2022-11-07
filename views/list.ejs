@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PassMan</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="bg-secondary">
+        <%- include("./includes/navbar.ejs") %>
+        <div class="container">
+            <div class="row text-bg-light p-3 m-5 rounded table-responsive">
+                <h2><i class="fa fa-list"></i> Password Manager</h2>
+                <p>You can see your saved passwrods in bottom table.</p>
+                <table class="table table-hover font-size-small">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID ( click ID to copy )</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Comment</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% if (data.length<=0) { %>
+                            <td colspan="4">
+                                We don't have any data to show here ...
+                            </td>
+                            <% } else { %> 
+                                <% for(let i of data) { %> 
+                                    <tr>
+                                        <td class="copy lead" title="click to copy">
+                                            <strong><%= i.id %></strong>
+                                        </td>
+                                        <td><%= i.username %></td>
+                                        <td><%= i.password %></td>
+                                        <td><%= i.comment %></td>
+                                        <td><%= i.date %></td>
+                                    </tr>
+                                <% } %>
+                            <% } %>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/copy.js"></script>
+    </body>
+</html>
